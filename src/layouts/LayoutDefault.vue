@@ -19,17 +19,21 @@ const device = computed(() => systemStore.device)
 </script>
 
 <template>
-  <template v-if="!onlyShowContent">
+  <!-- <template v-if="!onlyShowContent">
     <template v-if="device === 'desktop'">
       <SideMenuLayout v-if="layout_sidemenu" />
       <TopMenuLayout v-else-if="layout_topmenu" />
       <MixinMenuLayout v-else-if="layout_mixinmenu" />
     </template>
+    
     <template v-else-if="device === 'mobile'">
       <MobileDeviceLayout />
     </template>
   </template>
-  <OnlyShowContentLayout v-else />
+  <OnlyShowContentLayout v-else /> -->
+
+
+  <SideMenuLayout />
 </template>
 
 <style lang="less" scoped></style>

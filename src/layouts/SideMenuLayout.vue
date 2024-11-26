@@ -4,7 +4,6 @@ import { useLayoutThemeStore } from '@/store/layout/layoutTheme.js'
 import LayoutTitle from '@/layouts/components/title/LayoutTitle.vue'
 import LayoutMenu from '@/layouts/components/menu/LayoutMenu.vue'
 import LayoutHeader from '@/layouts/components/header/LayoutHeader.vue'
-import LayoutFooter from '@/layouts/components/footer/LayoutFooter.vue'
 import LayoutTabs from '@/layouts/components/tabs/LayoutTabs.vue'
 import LayoutPage from '@/layouts/components/page/LayoutPage.vue'
 
@@ -50,7 +49,6 @@ const border = computed(() => layoutThemeStore.border)
         </a-watermark>
         <LayoutPage v-else />
       </a-layout-content>
-      <LayoutFooter v-if="showFooter" />
     </a-layout>
   </a-layout>
 </template>

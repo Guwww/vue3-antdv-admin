@@ -60,39 +60,39 @@ const RootRoute = {
         },
       ],
     },
-    {
-      path: '/outside',
-      redirect: '/outside/iframe',
-      name: 'OutSide',
-      meta: {
-        title: 'route.outsidePage',
-        icon: 'material-symbols:link',
-        namePath: ['OutSide'],
-      },
-      children: [
-        {
-          path: 'iframe',
-          name: 'Iframe',
-          component: () => import('@/views/iframe/IframeView.vue'),
-          meta: {
-            title: 'route.bilibili',
-            icon: 'simple-icons:bilibili',
-            namePath: ['OutSide', 'Iframe'],
-            iframe: 'https://www.bilibili.com/',
-          },
-        },
-        {
-          path: 'https://www.zhihu.com/',
-          name: 'OutsideLink',
-          meta: {
-            title: 'route.zhihu',
-            icon: 'simple-icons:zhihu',
-            namePath: ['OutSide', 'OutsideLink'],
-            outsideLink: true,
-          },
-        },
-      ],
-    },
+    // {
+    //   path: '/outside',
+    //   redirect: '/outside/iframe',
+    //   name: 'OutSide',
+    //   meta: {
+    //     title: 'route.outsidePage',
+    //     icon: 'material-symbols:link',
+    //     namePath: ['OutSide'],
+    //   },
+    //   children: [
+    //     {
+    //       path: 'iframe',
+    //       name: 'Iframe',
+    //       component: () => import('@/views/iframe/IframeView.vue'),
+    //       meta: {
+    //         title: 'route.bilibili',
+    //         icon: 'simple-icons:bilibili',
+    //         namePath: ['OutSide', 'Iframe'],
+    //         iframe: 'https://www.bilibili.com/',
+    //       },
+    //     },
+    //     {
+    //       path: 'https://www.zhihu.com/',
+    //       name: 'OutsideLink',
+    //       meta: {
+    //         title: 'route.zhihu',
+    //         icon: 'simple-icons:zhihu',
+    //         namePath: ['OutSide', 'OutsideLink'],
+    //         outsideLink: true,
+    //       },
+    //     },
+    //   ],
+    // },
     {
       path: '/about',
       name: 'About',

@@ -4,16 +4,12 @@ import { useI18n } from 'vue-i18n'
 import {
   MenuFoldOutlined,
   MenuUnfoldOutlined,
-  LockOutlined,
   SyncOutlined,
 } from '@ant-design/icons-vue'
 import { useLayoutThemeStore } from '@/store/layout/layoutTheme.js'
 import { useSystemStore } from '@/store/layout/system.js'
 import LayoutBreadcrumb from '@/layouts/components/breadcrumb/LayoutBreadcrumb.vue'
 import LayoutSetting from '@/layouts/components/setting/LayoutSetting.vue'
-import FullScreen from '@/layouts/components/fullscreen/FullScreen.vue'
-import SearchMenu from '@/layouts/components/searchMenu/SearchMenu.vue'
-import LocaleLanguage from '@/layouts/components/locale/LocaleLanguage.vue'
 import UserAvatar from '@/layouts/components/user/UserAvatar.vue'
 
 defineProps({
@@ -30,12 +26,8 @@ const layout_sidemenu = computed(() => layoutSetting.layout === 'sidemenu')
 const layout_topmenu = computed(() => layoutSetting.layout === 'topmenu')
 const layout_mixinmenu = computed(() => layoutSetting.layout === 'mixinmenu')
 const showBreadcrumb = computed(() => layoutSetting.showBreadcrumb)
-const showSearchMenu = computed(() => layoutSetting.showSearchMenu)
-const showLockScreen = computed(() => layoutSetting.showLockScreen)
-const showFullScreen = computed(() => layoutSetting.showFullScreen)
 const showSetting = computed(() => layoutSetting.showSetting)
 const showRefreshReset = computed(() => layoutSetting.showRefreshReset)
-const locale = computed(() => layoutSetting.locale)
 const sidemenuWidth = computed(() => layoutSetting.sidemenuWidth)
 const headerBackground = computed(() => layoutThemeStore.headerBackground)
 const headerColor = computed(() => layoutThemeStore.headerColor)
@@ -79,15 +71,9 @@ const layoutHeaderStyle = computed(() => {
     </div>
     <div>
       <a-space :size="20">
-        <SearchMenu v-if="showSearchMenu" />
-        <a-tooltip :title="t('setting.lockScreen')" v-if="showLockScreen">
-          <LockOutlined @click="systemStore.setLockScreenState(true)" />
-        </a-tooltip>
-        <FullScreen v-if="showFullScreen" />
         <a-tooltip :title="t('setting.refreshReset')" v-if="showRefreshReset">
           <SyncOutlined @click="systemStore.clearCacheReload()" />
         </a-tooltip>
-        <LocaleLanguage v-if="locale" />
         <UserAvatar />
         <LayoutSetting v-if="showSetting" />
       </a-space>

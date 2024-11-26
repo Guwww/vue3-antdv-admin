@@ -90,8 +90,8 @@ const tabBarStyle = ref({
           <template #split>
             <a-divider type="vertical" />
           </template>
-          <TabsOperator :tabItem="route" :isExtra="true" />
-          <SearchMenu v-if="!showHeader && showSearchMenu" />
+          <!-- <TabsOperator :tabItem="route" :isExtra="true" /> -->
+          <!-- <SearchMenu v-if="!showHeader && showSearchMenu" />
           <a-tooltip title="锁屏" v-if="!showHeader && showLockScreen">
             <LockOutlined @click="systemStore.setLockScreenState(true)" />
           </a-tooltip>
@@ -99,7 +99,7 @@ const tabBarStyle = ref({
           <a-tooltip title="刷新重置" v-if="!showHeader && showRefreshReset">
             <ReloadOutlined @click="systemStore.clearCacheReload()" />
           </a-tooltip>
-          <LayoutSetting v-if="!showHeader && showSetting" />
+          <LayoutSetting v-if="!showHeader && showSetting" /> -->
         </a-space>
       </template>
     </a-tabs>
